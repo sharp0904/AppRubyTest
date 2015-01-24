@@ -1,0 +1,29 @@
+<%= form_for(@oiseau) do |f| %>
+  <% if @oiseau.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@oiseau.errors.count, "error") %> prohibited this oiseau from being saved:</h2>
+
+      <ul>
+      <% @oiseau.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nom %><br>
+    <%= f.text_field :nom %>
+  </div>
+  <div class="field">
+    <%= f.label :race %><br>
+    <%= f.text_field :race %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br>
+    <%= f.text_field :age %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

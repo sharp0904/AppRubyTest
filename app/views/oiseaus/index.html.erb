@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Oiseaus</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Race</th>
+      <th>Age</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @oiseaus.each do |oiseau| %>
+      <tr>
+        <td><%= oiseau.nom %></td>
+        <td><%= oiseau.race %></td>
+        <td><%= oiseau.age %></td>
+        <td><%= link_to 'Show', oiseau %></td>
+        <td><%= link_to 'Edit', edit_oiseau_path(oiseau) %></td>
+        <td><%= link_to 'Destroy', oiseau, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Oiseau', new_oiseau_path %>
